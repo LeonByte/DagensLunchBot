@@ -37,3 +37,5 @@ def fetch_lunch_menu(dag : str) -> list:
                 return menu_items[days[today.weekday()]]
             else:
                 return None
+        else:
+            return menu_items[dag]
