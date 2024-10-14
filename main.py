@@ -1,7 +1,9 @@
 from os import getenv
 from dotenv import load_dotenv
-from discord import Intents, Message
+from discord import Intents, Message, Embed
 from discord.ext.commands import Bot
+from discord.ext import commands
+from datetime import datetime
 import response
 
 
@@ -15,8 +17,6 @@ class BotContainer:
         intents.message_content = True
         bot = Bot(command_prefix='!', intents=intents, case_insensitive=True)
 
-
-
         @bot.event
         async def on_ready():
             print(f'{bot.user} is ready')
@@ -24,39 +24,50 @@ class BotContainer:
         @bot.event
         async def on_message(message : Message):
             if message.author == bot.user:
-                return
-            
+                return        
             await bot.process_commands(message)
 
         @bot.command()
         async def monday(message : Message):
             res = '\n'.join(response.fetch_lunch_menu('Måndag'))
-            await message.channel.send(res)
+            today_date = datetime.now().strftime("%Y-%m-%d")
+            await message.channel.send(f"Dagens datum: {today_date}\n{res}")
 
         @bot.command()
         async def tuesday(message : Message):
             res = '\n'.join(response.fetch_lunch_menu('Tisdag'))
-            await message.channel.send(res)
+            today_date = datetime.now().strftime("%Y-%m-%d")
+            await message.channel.send(f"Dagens datum: {today_date}\n{res}")
 
         @bot.command()
         async def wednesday(message : Message):
             res = '\n'.join(response.fetch_lunch_menu('Onsdag'))
-            await message.channel.send(res)
+            today_date = datetime.now().strftime("%Y-%m-%d")
+            await message.channel.send(f"Dagens datum: {today_date}\n{res}")
         
         @bot.command()
         async def thursday(message : Message):
             res = '\n'.join(response.fetch_lunch_menu('Torsdag'))
-            await message.channel.send(res)
+            today_date = datetime.now().strftime("%Y-%m-%d")
+            await message.channel.send(f"Dagens datum: {today_date}\n{res}")
 
         @bot.command()
         async def friday(message : Message):
             res = '\n'.join(response.fetch_lunch_menu('Fredag'))
-            await message.channel.send(res)
+            today_date = datetime.now().strftime("%Y-%m-%d")
+            await message.channel.send(f"Dagens datum: {today_date}\n{res}")
 
         @bot.command()
         async def today(message : Message):
             res = '\n'.join(response.fetch_lunch_menu('Today'))
-            await message.channel.send(res)
+            today_date = datetime.now().strftime("%Y-%m-%d")
+            await message.channel.send(f"Dagens datum: {today_date}\n{res}")
+        
+        @bot.command()
+        @commands.is_owner()
+        async def shutdown(ctx):
+            await ctx.send("Shutting down... Hejdå!")
+            await bot.close()
         
 
         bot.run(self.bot_token)

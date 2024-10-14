@@ -42,7 +42,6 @@ def fetch_lunch_menu(dag : str) -> list:
         else:
             return menu_items[dag]
 
-print(datetime.today().weekday())
 #schedule.every().monday.at("10:00").do(fetch_lunch_menu)
 #while True:
 #schedule.run_pending()
