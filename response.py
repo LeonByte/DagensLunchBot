@@ -33,7 +33,7 @@ def fetch_lunch_menu(dag : str) -> list:
         
         if dag == 'Today':
             today = datetime.today()
-            if today.weekday() not in (5, 6):  # Om det inte är lördag eller söndag
+            if today.weekday() not in (5, 6): 
                 return menu_items[days[today.weekday()]]
             else:
                 return None
