@@ -1,5 +1,5 @@
 from os import getenv
-from dotenv import load_env
+from dotenv import load_dotenv
 from discord import Intents, Message
 from discord.ext.commands import Bot
 
@@ -36,7 +36,7 @@ class BotContainer:
         async def thursday(message : Message):
             pass
         async def friday(message : Message):
-            pass
+            pass 
         async def today(message : Message):
             pass
         
@@ -44,4 +44,11 @@ class BotContainer:
         bot.run(self.bot_token)
 
 if __name__ == '__main__':
-    load_env()
+    load_dotenv()
+    bot_token = getenv('DISCORD_TOKEN')
+    if bot_token:
+        bot = BotContainer(bot_token)
+        bot.run()
+    else:
+        print("Bot token not found.")
+
