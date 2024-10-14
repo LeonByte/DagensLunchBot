@@ -10,6 +10,7 @@ This is a Discord bot that fetches the daily lunch menu from the [61an Gastrogat
   - `!wednesday` - Get the lunch menu for Wednesday.
   - `!thursday` - Get the lunch menu for Thursday.
   - `!friday` - Get the lunch menu for Friday.
+  - `!today` - Get today's lunch menu.
 - **Easy setup**: Uses environment variables to keep your bot token secure.
 - **Web scraping**: Uses BeautifulSoup to scrape lunch menu data from [61an Gastrogate](https://61an.gastrogate.com/dagens-lunch/).
 
@@ -59,14 +60,14 @@ Make sure you have the following installed:
 
 The bot responds to the following commands:
 
-| Command      | Description                            |
-| ------------ | -------------------------------------- |
-| `!monday`    | Fetches Monday's lunch menu.           |
-| `!tuesday`   | Fetches Tuesday's lunch menu.          |
-| `!wednesday` | Fetches Wednesday's lunch menu.        |
-| `!thursday`  | Fetches Thursday's lunch menu.         |
-| `!friday`    | Fetches Friday's lunch menu.           |
-| `!today`     | Placeholder for fetching today's menu. |
+| Command      | Description                     |
+| ------------ | ------------------------------- |
+| `!monday`    | Fetches Monday's lunch menu.    |
+| `!tuesday`   | Fetches Tuesday's lunch menu.   |
+| `!wednesday` | Fetches Wednesday's lunch menu. |
+| `!thursday`  | Fetches Thursday's lunch menu.  |
+| `!friday`    | Fetches Friday's lunch menu.    |
+| `!today`     | Fetches today's lunch menu.     |
 
 ## How it works
 
@@ -97,6 +98,14 @@ The bot scrapes the lunch menu from [61an Gastrogate](https://61an.gastrogate.co
 - [discord.py](https://github.com/Rapptz/discord.py) - A Python wrapper for the Discord API.
 - [beautifulsoup4](https://www.crummy.com/software/BeautifulSoup/) - A library to extract data from HTML and XML files.
 - [requests](https://pypi.org/project/requests/) - A simple HTTP library for Python.
+
+## Contributors
+
+This project was created by:
+
+- **Person 1** - Role or contributions
+- **Person 2** - Role or contributions
+- **Person 3** - Role or contributions
 
 ## License
 
