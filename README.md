@@ -113,7 +113,6 @@ The bot scrapes the lunch menu from [61an Gastrogate](https://61an.gastrogate.co
 
 This project was created by:
 
-- **Person 1** - Role or contributions
 - [Alfred](https://github.com/ajmueller0625) - Co-Founder: Contributed to the development, design, and implementation of functionalities for the Discord bot, including web scraping and integration of the restaurant menu.
 - [Haidar](https://github.com/hdm-py) - Co-Founder: Contributed to the development, design, and implementation of functionalities for the Discord bot, including web scraping and integration of the restaurant menu.
 - [Robert](https://github.com/LeonByte) - Co-Founder: Contributed to the development, design, and implementation of functionalities for the Discord bot, including web scraping and integration of the restaurant menu.
