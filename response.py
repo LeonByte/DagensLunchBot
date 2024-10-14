@@ -2,12 +2,9 @@ from bs4 import BeautifulSoup
 import requests
 import schedule
 import time
-import discord
-from datetime import datetime
-from discord.ext import commands
 
-# def fetch_lunch_menu(day : str):
-def fetch_lunch_menu():
+
+def fetch_lunch_menu(dag : str) -> list:
 
     url = "https://61an.gastrogate.com/dagens-lunch/"
     response = requests.get(url)
@@ -37,13 +34,10 @@ def fetch_lunch_menu():
                 if day in key:
                     menu_items.update({day: value})
 
-        return menu_items
-
-print(fetch_lunch_menu())
+        return menu_items[dag]
 
 #schedule.every().monday.at("10:00").do(fetch_lunch_menu)
-
 #while True:
-schedule.run_pending()
-time.sleep(1)
+#schedule.run_pending()
+#time.sleep(1)
 

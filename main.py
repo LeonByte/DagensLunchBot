@@ -2,6 +2,7 @@ from os import getenv
 from dotenv import load_dotenv
 from discord import Intents, Message
 from discord.ext.commands import Bot
+import response
 
 
 class BotContainer:
@@ -12,7 +13,8 @@ class BotContainer:
 
         intents = Intents.default()
         intents.message_content = True
-        bot = Bot(command_prefix='!', Intents=intents, case_insenstive=True)
+        bot = Bot(command_prefix='!', intents=intents, case_insensitive=True)
+
 
 
         @bot.event
@@ -28,15 +30,30 @@ class BotContainer:
 
         @bot.command()
         async def monday(message : Message):
-            pass
+            res = '\n'.join(response.fetch_lunch_menu('Måndag'))
+            await message.channel.send(res)
+
+        @bot.command()
         async def tuesday(message : Message):
-            pass
+            res = '\n'.join(response.fetch_lunch_menu('Tisdag'))
+            await message.channel.send(res)
+
+        @bot.command()
         async def wednesday(message : Message):
-            pass
+            res = '\n'.join(response.fetch_lunch_menu('Onsdag'))
+            await message.channel.send(res)
+        
+        @bot.command()
         async def thursday(message : Message):
-            pass
+            res = '\n'.join(response.fetch_lunch_menu('Torsdag'))
+            await message.channel.send(res)
+
+        @bot.command()
         async def friday(message : Message):
-            pass 
+            res = '\n'.join(response.fetch_lunch_menu('Fredag'))
+            await message.channel.send(res)
+
+        @bot.command()
         async def today(message : Message):
             pass
         
@@ -46,9 +63,9 @@ class BotContainer:
 if __name__ == '__main__':
     load_dotenv()
     bot_token = getenv('DISCORD_TOKEN')
-    if bot_token:
-        bot = BotContainer(bot_token)
-        bot.run()
-    else:
-        print("Bot token not found.")
+    # if bot_token:
+    bot = BotContainer(bot_token)
+    bot.run()
+    # else:
+        # print("Bot token not found.")
 
