@@ -74,6 +74,19 @@ The bot scrapes the lunch menu from [61an Gastrogate](https://61an.gastrogate.co
 
 ### Example
 
+## Restaurant Information
+
+**Restaurang 61:an**
+
+- **Address**: Karolinska Universitetssjukhuset, Plan 6, C161, 141 86 Stockholm
+- **Phone**: 08-58580046
+- **Website**: [61an.sodexo.se](https://61an.sodexo.se)
+
+**Opening Hours**:
+
+- Weekdays: 10:30 - 14:00
+- Café Bakery: 09:00 - 14:00
+
 ## Files
 
 - `main.py`: Contains the bot logic and command handling.
@@ -87,4 +100,4 @@ The bot scrapes the lunch menu from [61an Gastrogate](https://61an.gastrogate.co
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+_No specific license has been chosen for this project yet. Please contact the project owner if you have questions about usage or contributions._

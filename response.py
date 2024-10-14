@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import schedule
-import time
+from datetime import datetime 
 
 
 def fetch_lunch_menu(dag : str) -> list:
@@ -34,8 +34,15 @@ def fetch_lunch_menu(dag : str) -> list:
                 if day in key:
                     menu_items.update({day: value})
 
-        return menu_items[dag]
+        if dag == 'Today':
+            if datetime.today().weekday() not in (5, 6):
+                return menu_items[days[datetime.today().weekday()]]
+            else:
+                return None
+        else:
+            return menu_items[dag]
 
+print(datetime.today().weekday())
 #schedule.every().monday.at("10:00").do(fetch_lunch_menu)
 #while True:
 #schedule.run_pending()

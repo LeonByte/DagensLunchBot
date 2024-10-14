@@ -55,7 +55,8 @@ class BotContainer:
 
         @bot.command()
         async def today(message : Message):
-            pass
+            res = '\n'.join(response.fetch_lunch_menu('Today'))
+            await message.channel.send(res)
         
 
         bot.run(self.bot_token)
