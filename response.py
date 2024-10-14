@@ -6,6 +6,7 @@ import discord
 from datetime import datetime
 from discord.ext import commands
 
+# def fetch_lunch_menu(day : str):
 def fetch_lunch_menu():
 
     url = "https://61an.gastrogate.com/dagens-lunch/"
@@ -27,35 +28,16 @@ def fetch_lunch_menu():
 
             menu[day_name] = list_dish
 
-        for day, dishes in menu.items():
-            print(f"{day}:")
-            for dish in dishes:
-                print(f"- {dish}")
-                
-    # url = "https://61an.gastrogate.com/dagens-lunch/"
-    # response = requests.get(url)
+        days = ['Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag']
 
-    # if response.status_code == 200:
-    #     soup = BeautifulSoup(response.text, "html.parser")
+        menu_items = {}
 
-    #     menu = soup.find_all(class_="lunch-day-content")    
-    #     menu_list = {}
-    #     for item in menu:
-    #         # title = item.find("h3")
-    #         # description = item.find("p")
-    #         title = item.find("h3", class_="td_title")
-    #         description = item.find("p", class_="description")
-    #         lunch_menu = {"title": title, "description": description}
+        for key, value in menu.items():
+            for day in days:
+                if day in key:
+                    menu_items.update({day: value})
 
-    #         menu_list.append(lunch_menu)
-    #         print(title, description)
-
-    #     print(menu_list)
-
-    # else:
-    #     print("Failed to fetch data!")
-    #     return None
-
+        return menu_items
 
 print(fetch_lunch_menu())
 
