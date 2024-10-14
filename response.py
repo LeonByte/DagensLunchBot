@@ -3,6 +3,7 @@ import requests
 import schedule
 import time
 import discord
+from datetime import datetime
 from discord.ext import commands
 
 def fetch_lunch_menu():
@@ -10,9 +11,22 @@ def fetch_lunch_menu():
     response = requests.get(url)
 
     if response.status_code == 200:
-        print(response.text)
+        soup = BeautifulSoup(response.text, "html.parser")
+
+        menu = soup.find_all("div", class_="luch-menu")
+
+        for item in menu:
+            print(item.get_text(strip=True))
+
+        return menu
     else:
-        print("Failed fetch data!")
+        print("Failed to fetch data!")
+        return None
+
+
+    #     print(response.text)
+    # else:
+    #     print("Failed fetch data!")
 
 schedule.every().monday.at("10:00").do(fetch_lunch_menu)
 
