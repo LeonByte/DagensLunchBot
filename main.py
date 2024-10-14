@@ -27,14 +27,27 @@ class BotContainer:
                 return        
             await bot.process_commands(message)
 
+        def get_date_for_day(day_name: str) -> str:
+            today = datetime.now()
+            days_of_week = ['Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag']
+            target_day_idx = days_of_week.index(day_name)
+
+            delta = target_day_idx - today.weekday()
+
+            if delta < 0:
+                delta += 7
+
+            target_date = today + timedelta(days=delta)
+            return target_date.strftime('%Y-%m-%d') 
+
         def create_embed(day: str, menu: list):
-            current_date = datetime.now().strftime('%Y-%m-%d')
+            date_for_day = get_date_for_day(day)
             if menu:
                 description = "\n".join(menu)
             else:
                 description = "No menu available for today."
 
-            embed = Embed(title=f"{day}s Lunch Meny ({current_date})", description=description, color=0x00ff00)
+            embed = Embed(title=f"{day}s Lunch Meny ({date_for_day})", description=description, color=0x00ff00)
             embed.set_footer(text="Restaurang 61:an - Karolinska")
             return embed
 
