@@ -2,10 +2,8 @@ from os import getenv
 from dotenv import load_dotenv
 from discord import Intents, Message, Embed
 from discord.ext.commands import Bot
-from discord.ext import commands
 from datetime import datetime, timedelta
 import response
-
 
 class BotContainer:
     def __init__(self, bot_token) -> None:
@@ -63,7 +61,6 @@ class BotContainer:
             embed = create_embed('Tisdag', menu)
             await ctx.send(embed=embed)
             
-
         @bot.command()
         async def wednesday(ctx):
             menu = response.fetch_lunch_menu('Onsdag')
@@ -97,7 +94,6 @@ class BotContainer:
             await ctx.send("Shutting down... Hejdå! Have a great day!")
             await bot.close()
         
-
         bot.run(self.bot_token)
 
 if __name__ == '__main__':
@@ -108,4 +104,3 @@ if __name__ == '__main__':
         bot.run()
     else:
         print("Bot token not found.")
-
