@@ -2,6 +2,10 @@
 
 This is a Discord bot that fetches the daily lunch menu from the [61an Gastrogate Website](https://61an.gastrogate.com/dagens-lunch/) and provides it in a Discord server through various commands.
 
+## Hackathon 2024 Participation
+
+This project was developed as part of a Hackathon (light-version) held at Nackademin, on 2024-10-14. It was a collaborative effort to create a Discord bot that scrapes and displays daily lunch menus from Sodexo's Restaurang 61:an at Karolinska Universitetssjukhuset.
+
 ## Features
 
 - **Fetch lunch menus for each weekday**:
