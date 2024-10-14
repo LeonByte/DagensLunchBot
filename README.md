@@ -1,4 +1,4 @@
-# Karolinska Lunch Bot
+# Karolinska Dagens Lunch Bot
 
 This is a Discord bot that fetches the daily lunch menu from the [61an Gastrogate Website](https://61an.gastrogate.com/dagens-lunch/) and provides it in a Discord server through various commands.
 
@@ -28,8 +28,8 @@ Make sure you have the following installed:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/karolinska-lunch-bot.git
-   cd karolinska-lunch-bot
+   git clone https://github.com/your-username/DagensLunchBot.git
+   cd DagensLunchBot
    ```
 
 2. **Create a virtual environment:**
@@ -75,6 +75,16 @@ The bot scrapes the lunch menu from [61an Gastrogate](https://61an.gastrogate.co
 
 ### Example
 
+# Example usage of the bot:
+
+!monday
+
+# Returns Monday's lunch menu with the correct date.
+
+!today
+
+# Returns today's lunch menu.
+
 ## Restaurant Information
 
 **Restaurang 61:an**
@@ -104,9 +114,10 @@ The bot scrapes the lunch menu from [61an Gastrogate](https://61an.gastrogate.co
 This project was created by:
 
 - **Person 1** - Role or contributions
-- **Person 2** - Role or contributions
-- **Person 3** - Role or contributions
+- [Alfred](https://github.com/ajmueller0625) - Co-Founder: Contributed to the development, design, and implementation of functionalities for the Discord bot, including web scraping and integration of the restaurant menu.
+- [Haidar](https://github.com/hdm-py) - Co-Founder: Contributed to the development, design, and implementation of functionalities for the Discord bot, including web scraping and integration of the restaurant menu.
+- [Robert](https://github.com/LeonByte) - Co-Founder: Contributed to the development, design, and implementation of functionalities for the Discord bot, including web scraping and integration of the restaurant menu.
 
 ## License
 
-_No specific license has been chosen for this project yet. Please contact the project owner if you have questions about usage or contributions._
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
