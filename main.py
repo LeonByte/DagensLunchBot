@@ -17,33 +17,42 @@ class BotContainer:
         # Set up intents for the bot
         intents = Intents.default()
         intents.message_content = True
-        bot = Bot(command_prefix="!", intents=intents, case_insensitive=True)
+        bot = Bot(command_prefix="!", intents=intents, help_command=None, case_insensitive=True)
 
         @bot.event
         async def on_ready():
             # Print a message when the bot is ready
             print(f"{bot.user} is ready")
 
+            # Loop through all guilds (servers) the bot is in
+            for guild in bot.guilds:
+                # Loop through all text channels in the guild
+                for channel in guild.text_channels:
+                    # Check if the bot has permission to send messages in the channel
+                    if channel.permissions_for(guild.me).send_messages:
+                        await channel.send("Hello, how can I assist you today? Please type !help to see the available commands.")
+                        break
+
         @bot.event
         async def on_message(message: Message):
             # Ignore messages from the bot itself
             if message.author == bot.user:
                 return
-            
             # Process commands and handle errors
-            try:
+            if message.content.startswith("!"):
+                command_name = message.content.split(" ")[0][1:]
+                try:
+                    if command_name in bot.all_commands:
+                    # Attempt to process the command recevied in the message
+                        await bot.process_commands(message)
+                    else:
+                    # If the command is not found, send a message indicating it doesn't exist
+                        await message.channel.send("This command does not exist, please try again.")
+                except KeyError:
+                    # Handle any errors that may occur while fetching data
+                    await message.channel.send("An error occurred while fetching the menu.")
+            else:
                 await bot.process_commands(message)
-            except commands.CommandNotFound:
-                await message.channel.send("Det kommandot finns inte. Försök med ett annat kommando.")
-            except KeyError:
-                await message.channel.send("Ett fel inträffade vid hämtning av menyn.")
-
-            # Define valid commands
-            valid_commands = ["!monday", "!tuesday", "!wednesday", "!thursday", 
-                              "!friday", "!today", "!restart", "!shutdown"]
-            # Check if the message starts with '!' and is not a valid command
-            if message.content.startswith("!") and message.content not in valid_commands:
-                await message.channel.send("Detta kommando finns inte, försök igen.")
 
         def get_date_for_day(day_name: str) -> str:
             # Get the date for the specified day of the week
@@ -112,6 +121,22 @@ class BotContainer:
             else:
                 embed = create_embed("Today", ["No menu available for today."])
             await ctx.send(embed=embed)
+
+        @bot.command()
+        async def help(ctx):
+            help_message = (
+        "Here are the available commands:\n"
+        "- **!monday**: Get Monday's lunch menu.\n"
+        "- **!tuesday**: Get Tuesday's lunch menu.\n"
+        "- **!wednesday**: Get Wednesday's lunch menu.\n"
+        "- **!thursday**: Get Thursday's lunch menu.\n"
+        "- **!friday**: Get Friday's lunch menu.\n"
+        "- **!today**: Get today's lunch menu.\n"
+        "- **!help**: Get help with using the bot.\n"
+        "- **!restart**: Restart the bot (Admin only).\n"
+        "- **!shutdown**: Shut down the bot (Admin only)."
+        )
+            await ctx.send(help_message)
 
         @bot.command()
         @commands.has_permissions(administrator=True)
