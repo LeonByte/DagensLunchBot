@@ -89,6 +89,15 @@ The bot scrapes the lunch menu from [61an Gastrogate](https://61an.gastrogate.co
 
 # Returns today's lunch menu.
 
+## Example Image
+
+Here’s an example image:
+
+![!friday Command: Displays the scheduled tasks for Friday.](images/image1.png)
+![!monday Command: Shows a message about tasks for the upcoming week.](images/image2.png)
+![!thursday Command: Provides details on tasks for Thursday.](images/image3.png)
+![!today Command: Lists tasks for the current day.](images/image4.png)
+
 ## Restaurant Information
 
 **Restaurang 61:an**
