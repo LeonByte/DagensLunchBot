@@ -38,12 +38,13 @@ Make sure you have the following installed:
    git clone https://github.com/hdm-py/lunch_bot
    cd lunch_bot
 
+   ```
 
 2. **Create a virtual environment:**
 
    ```bash
    python -m venv venv
-   source venv/Scripts/activate 
+   source venv/Scripts/activate
    ```
 
 3. **Install dependencies:**
@@ -67,17 +68,16 @@ Make sure you have the following installed:
 
 The bot responds to the following commands:
 
-| Command      | Description                          |
-| ------------ | ------------------------------------ |
-| `!monday`    | Fetches Monday's lunch menu.        |
-| `!tuesday`   | Fetches Tuesday's lunch menu.       |
-| `!wednesday` | Fetches Wednesday's lunch menu.     |
-| `!thursday`  | Fetches Thursday's lunch menu.      |
-| `!friday`    | Fetches Friday's lunch menu.        |
-| `!today`     | Fetches today's lunch menu.         |
-| `!shutdown`  | Shuts down the bot (admin only).    |
-| `!restart`   | Restarts the bot (admin only).      |
-
+| Command      | Description                      |
+| ------------ | -------------------------------- |
+| `!monday`    | Fetches Monday's lunch menu.     |
+| `!tuesday`   | Fetches Tuesday's lunch menu.    |
+| `!wednesday` | Fetches Wednesday's lunch menu.  |
+| `!thursday`  | Fetches Thursday's lunch menu.   |
+| `!friday`    | Fetches Friday's lunch menu.     |
+| `!today`     | Fetches today's lunch menu.      |
+| `!shutdown`  | Shuts down the bot (admin only). |
+| `!restart`   | Restarts the bot (admin only).   |
 
 ## How it works
 
@@ -97,14 +97,12 @@ The bot scrapes the lunch menu from [61an Gastrogate](https://61an.gastrogate.co
 
 ## Example Image
 
-Here’s an example image:
+Here are a few sample images:
 
-![!friday Command: Displays the scheduled tasks for Friday.](images/image1.png)
-![!monday Command: Shows a message about tasks for the upcoming week.](images/image2.png)
-![!thursday Command: Provides details on tasks for Thursday.](images/image3.png)
-![!today Command: Lists tasks for the current day.](images/image4.png)
-
-## Restaurant Information
+![Friday Command: Displays the scheduled tasks for Friday.](images/Image1.png)
+![Monday Command: In case of a day that has already passed, shows a message about tasks for the upcoming week.](images/Image2.png)
+![Thursday Command: Provides details on tasks for Thursday.](images/Image3.png)
+![Today Command: Lists tasks for the current day.](images/Image4.png)
 
 **Restaurang 61:an**
 
