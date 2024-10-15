@@ -1,20 +1,23 @@
-# Karolinska Dagens Lunch Bot
+# Karolinska Daily Lunch Bot
 
 This is a Discord bot that fetches the daily lunch menu from the [61an Gastrogate Website](https://61an.gastrogate.com/dagens-lunch/) and provides it in a Discord server through various commands.
 
 ## Hackathon 2024 Participation
 
-This project was developed as part of a Hackathon (light-version) held at Nackademin, on 2024-10-14. It was a collaborative effort to create a Discord bot that scrapes and displays daily lunch menus from Sodexo's Restaurang 61:an at Karolinska Universitetssjukhuset.
+This project was developed as part of a Hackathon (light-version) held at Nackademin, on 2024-10-14. It was a collaborative effort to create a Discord bot that scrapes and displays daily lunch menus from Sodexo's Restaurant 61:an at Karolinska University Hospital.
 
 ## Features
 
 - **Fetch lunch menus for each weekday**:
-  - `!monday` - Get the lunch menu for Monday.
-  - `!tuesday` - Get the lunch menu for Tuesday.
-  - `!wednesday` - Get the lunch menu for Wednesday.
-  - `!thursday` - Get the lunch menu for Thursday.
-  - `!friday` - Get the lunch menu for Friday.
+  - `!monday` - Get Monday's lunch menu.
+  - `!tuesday` - Get Tuesday's lunch menu.
+  - `!wednesday` - Get Wednesday's lunch menu.
+  - `!thursday` - Get Thursday's lunch menu.
+  - `!friday` - Get Friday's lunch menu.
   - `!today` - Get today's lunch menu.
+- **Admin Commands**:
+  - `!shutdown` - Shuts down the bot (admin only).
+  - `!restart` - Restarts the bot (admin only).
 - **Easy setup**: Uses environment variables to keep your bot token secure.
 - **Web scraping**: Uses BeautifulSoup to scrape lunch menu data from [61an Gastrogate](https://61an.gastrogate.com/dagens-lunch/).
 
@@ -32,15 +35,15 @@ Make sure you have the following installed:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/DagensLunchBot.git
-   cd DagensLunchBot
-   ```
+   git clone https://github.com/hdm-py/lunch_bot
+   cd lunch_bot
+
 
 2. **Create a virtual environment:**
 
    ```bash
    python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   source venv/Scripts/activate 
    ```
 
 3. **Install dependencies:**
@@ -64,14 +67,17 @@ Make sure you have the following installed:
 
 The bot responds to the following commands:
 
-| Command      | Description                     |
-| ------------ | ------------------------------- |
-| `!monday`    | Fetches Monday's lunch menu.    |
-| `!tuesday`   | Fetches Tuesday's lunch menu.   |
-| `!wednesday` | Fetches Wednesday's lunch menu. |
-| `!thursday`  | Fetches Thursday's lunch menu.  |
-| `!friday`    | Fetches Friday's lunch menu.    |
-| `!today`     | Fetches today's lunch menu.     |
+| Command      | Description                          |
+| ------------ | ------------------------------------ |
+| `!monday`    | Fetches Monday's lunch menu.        |
+| `!tuesday`   | Fetches Tuesday's lunch menu.       |
+| `!wednesday` | Fetches Wednesday's lunch menu.     |
+| `!thursday`  | Fetches Thursday's lunch menu.      |
+| `!friday`    | Fetches Friday's lunch menu.        |
+| `!today`     | Fetches today's lunch menu.         |
+| `!shutdown`  | Shuts down the bot (admin only).    |
+| `!restart`   | Restarts the bot (admin only).      |
+
 
 ## How it works
 
