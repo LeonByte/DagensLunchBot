@@ -14,5 +14,5 @@ python-dotenv==1.2.2
 requests==2.33.0
 schedule==1.2.2
 soupsieve==2.6
-urllib3==2.6.3
+urllib3==2.7.0
 yarl==1.15.2
